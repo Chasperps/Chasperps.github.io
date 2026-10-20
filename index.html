@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Objetivos SMART en Ingeniería de Software</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="top" aria-label="Secciones">
+  <div class="wrap">
+    <span class="brand">SMART 🎯</span>
+    <a href="#que-es">¿Qué es?</a>
+    <a href="#software">En software</a>
+    <a href="#antes">Antes y después</a>
+    <a href="#lab">Pruébalo</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#pros">Pros y contras</a>
+    <a href="#fuentes">Fuentes</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Objetivos SMART en Ingeniería de Software</h1>
+    <p class="lead">“Hacer que la app sea mejor” no es un objetivo, es un deseo. La técnica SMART te ayuda a convertir ideas vagas en metas y requisitos que el equipo puede entender, medir y entregar. Toca cada nota para ver qué significa su letra.</p>
+
+    <div class="mode" role="group" aria-label="Cambiar interpretación">
+      <button type="button" data-mode="obj" aria-pressed="true">Como objetivo de proyecto</button>
+      <button type="button" data-mode="req" aria-pressed="false">Como requisito de software</button>
+    </div>
+
+    <div class="notes" id="notes"></div>
+    <button class="flipall" id="flipall" type="button">Voltear todas</button>
+  </div>
+</header>
+
+<main>
+<section id="que-es">
+  <div class="wrap">
+    <h2>¿De dónde salió esto?</h2>
+    <span class="scribble">spoiler: no lo inventó un programador</span>
+    <p>SMART es un acrónimo que sirve como regla mnemotécnica para escribir objetivos claros. Nació en el mundo de la administración de empresas y después se adoptó en gestión de proyectos, metodologías ágiles e ingeniería de requisitos.</p>
+    <ol class="timeline">
+      <li><span class="yr">1954</span><div class="txt"><p>Peter Drucker populariza la <em>administración por objetivos</em>. Muchos autores ven ahí la raíz de la idea SMART, aunque Drucker nunca usó el acrónimo.</p></div></li>
+      <li><span class="yr">1981</span><div class="txt"><p>George T. Doran, consultor y exdirector de planeación corporativa de Washington Water Power, publica en la revista <em>Management Review</em> el artículo “There’s a S.M.A.R.T. way to write management’s goals and objectives”. Su versión original era: Specific, Measurable, Assignable, Realistic y Time-related.</p></div></li>
+      <li><span class="yr">90s</span><div class="txt"><p>La ingeniería de requisitos toma la idea y la adapta: un buen requisito debe ser Específico, Medible, Alcanzable, Realizable y Trazable. La “T” cambia porque a un requisito le importa poder seguirlo hasta su origen y sus pruebas.</p></div></li>
+      <li><span class="yr">Hoy</span><div class="txt"><p>Se usa en Scrum para redactar objetivos de sprint, en métricas de calidad, en planes de carrera de desarrolladores y hasta en cursos universitarios basados en proyectos.</p></div></li>
+    </ol>
+    <p style="margin-top:18px">Un detalle importante: el propio Doran aclaró que no todos los objetivos tienen que cumplir las cinco letras al pie de la letra. Es una guía, no una ley.</p>
+  </div>
+</section>
+
+<section id="software">
+  <div class="wrap">
+    <h2>Dos formas de usarlo en software</h2>
+    <p>En Ingeniería de Software, SMART aparece en dos lugares distintos. Las letras se parecen, pero no significan exactamente lo mismo.</p>
+    <div class="twocol">
+      <div class="box tilt">
+        <h3>🗂️ Objetivos del proyecto o del equipo</h3>
+        <p>Para planear el trabajo: metas del sprint, del semestre, de calidad o de aprendizaje.</p>
+        <ul>
+          <li><strong>S</strong>pecific: qué se va a lograr exactamente.</li>
+          <li><strong>M</strong>easurable: con qué número sabremos que se logró.</li>
+          <li><strong>A</strong>chievable: el equipo tiene tiempo, gente y conocimientos.</li>
+          <li><strong>R</strong>elevant: aporta a la meta del producto.</li>
+          <li><strong>T</strong>ime-bound: tiene fecha límite o sprint asignado.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>📋 Requisitos del sistema</h3>
+        <p>Para escribir lo que el software debe hacer (sobre todo los no funcionales).</p>
+        <ul>
+          <li><strong>S</strong>pecific: claro, sin ambigüedad, una sola característica.</li>
+          <li><strong>M</strong>easurable: cuantificable, observable y comprobable con una prueba.</li>
+          <li><strong>A</strong>ttainable: técnicamente posible (un 101% de disponibilidad no lo es).</li>
+          <li><strong>R</strong>ealizable: posible con los recursos reales de la organización.</li>
+          <li><strong>T</strong>raceable: se puede ligar a un requisito “padre” y a sus casos de prueba.</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:22px">Sobre la trazabilidad: si un requisito no se deriva de ningún requisito de nivel superior se le llama <em>huérfano</em>, y hay que revisar si de verdad hace falta implementarlo. En algunos libros la “T” también se lee como <em>Testable</em> o como <em>Time-bound</em>; la literatura no se pone de acuerdo.</p>
+  </div>
+</section>
+
+<section id="antes">
+  <div class="wrap">
+    <h2>Antes y después</h2>
+    <span class="scribble">intenta mejorarlo tú primero, luego revela la respuesta</span>
+    <div class="swap" id="swap"></div>
+  </div>
+</section>
+
+<section id="lab">
+  <div class="wrap">
+    <h2>Laboratorio: ¿tu objetivo es SMART?</h2>
+    <p>Escribe un objetivo o requisito de tu proyecto. La página revisa automáticamente la S, la M y la T buscando verbos concretos, números y fechas. La A y la R dependen de tu contexto, así que esas las marcas tú.</p>
+    <div class="lab">
+      <div>
+        <label for="goal" class="hand" style="font-size:1.4rem">Tu objetivo:</label>
+        <textarea id="goal" placeholder="Ej. Reducir el tiempo de carga del mapa de rutas a menos de 3 segundos antes del final del Sprint 2"></textarea>
+        <div class="examples" aria-label="Ejemplos">
+          <button type="button" data-ex="Mejorar la app.">Probar uno vago</button>
+          <button type="button" data-ex="Implementar el registro de usuarios con validación de correo y cubrirlo con al menos 10 pruebas unitarias antes del 13 de noviembre.">Probar uno bueno</button>
+        </div>
+        <div class="checks">
+          <label><input type="checkbox" id="chkA"> <span>El equipo tiene el tiempo, la gente y el conocimiento para lograrlo (A)</span></label>
+          <label><input type="checkbox" id="chkR"> <span>Se relaciona con la meta del producto o con un requisito de mayor nivel (R)</span></label>
+        </div>
+      </div>
+      <div class="results" aria-live="polite">
+        <div class="meter" id="meter"><div>S</div><div>M</div><div>A</div><div>R</div><div>T</div></div>
+        <ul class="feedback" id="feedback"></ul>
+        <p class="verdict" id="verdict">Escribe algo para empezar ✏️</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="wrap">
+    <h2>Quiz rápido: ¿SMART o no?</h2>
+    <div class="quiz" id="quizbox"></div>
+  </div>
+</section>
+
+<section id="pros">
+  <div class="wrap">
+    <h2>Lo bueno y lo no tan bueno</h2>
+    <div class="pros">
+      <div class="box tilt">
+        <h3>👍 Ventajas</h3>
+        <ul>
+          <li>Hay menos discusiones con el cliente, porque todos entienden lo mismo y se aprueban los requisitos más rápido.</li>
+          <li>Los desarrolladores saben exactamente qué se espera de ellos.</li>
+          <li>Un requisito medible se puede convertir directo en un caso de prueba.</li>
+          <li>Al terminar el proyecto puedes evaluar con datos qué tan bien salió.</li>
+          <li>Ayuda a que el equipo se mantenga motivado al ver avances concretos.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>👎 Limitaciones</h3>
+        <ul>
+          <li>Letras como “realista” o “alcanzable” son subjetivas: cada quien las interpreta distinto.</li>
+          <li>Redactar todo en formato SMART toma más tiempo que escribir metas sueltas.</li>
+          <li>Si se usa mecánicamente, se vuelve un trámite de “palomear casillas”.</li>
+          <li>No dice <em>cómo</em> lograr la meta, solo cómo escribirla.</li>
+          <li>Un objetivo SMART aislado puede no encajar con la estrategia general del equipo.</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:22px">Por eso han salido variantes como <strong>SMARTER</strong> (agrega Evaluar y Revisar) o <strong>SMART-VT</strong> (agrega Verificable y Trazable). En requisitos también se combina con otros acrónimos, como <strong>INVEST</strong> para historias de usuario.</p>
+  </div>
+</section>
+</main>
+
+<footer id="fuentes">
+  <div class="wrap">
+    <h3>Fuentes consultadas</h3>
+    <ol>
+      <li>Doran, G. T. (1981). There’s a S.M.A.R.T. way to write management’s goals and objectives. <em>Management Review</em>, 70(11), 35–36.</li>
+      <li>Haughey, D. <em>A Brief History of SMART Goals</em>. Project Smart. projectsmart.co.uk</li>
+      <li><em>SMART criteria</em>. Wikipedia. en.wikipedia.org/wiki/SMART_criteria</li>
+      <li><em>SMART Requirements</em>, en <em>Building N1 Grid Solutions</em>. O’Reilly Media.</li>
+      <li><em>Are Your Requirements SMART Like You?</em> Adaptive US. adaptiveus.com</li>
+      <li><em>Requirements</em>. Systems Analysis. systems-analysis.ru</li>
+      <li><em>SMART method</em>. ZEP Glossary. zep.de</li>
+      <li>La introducción de objetivos SMART en un entorno educativo. <em>Educación Química</em>, UNAM.</li>
+    </ol>
+  </div>
+</footer>
+
+<script>
+const MEANINGS = {
+  obj: [
+    ["Específico","Dice qué se va a lograr, quién y dónde. Nada de “mejorar el sistema”."],
+    ["Medible","Tiene un número o indicador: %, segundos, tareas completadas, bugs."],
+    ["Alcanzable","Es posible con el tiempo, la gente y el conocimiento del equipo. (Doran lo llamó “Asignable”)."],
+    ["Relevante","Aporta a la meta del producto o del sprint. (En 1981 era “Realista”)."],
+    ["Temporal","Tiene fecha límite: fin del sprint, semana, release."]
+  ],
+  req: [
+    ["Específico","Sin ambigüedad, con términos consistentes y una sola característica por requisito."],
+    ["Medible","Cuantificable y verificable: se puede escribir una prueba que diga sí o no."],
+    ["Alcanzable","Técnicamente posible. Un 101% de disponibilidad nunca lo será."],
+    ["Realizable","Se puede implementar con los recursos y el contexto actual de la organización."],
+    ["Trazable","Se liga a su requisito “padre”, a su diseño y a sus casos de prueba."]
+  ]
+};
+const LETTERS = ["S","M","A","R","T"];
+let mode = "obj";
+const notesEl = document.getElementById("notes");
+
+function renderNotes(){
+  const flipped = [...notesEl.children].map(n => n.classList.contains("flip"));
+  notesEl.innerHTML = "";
+  LETTERS.forEach((l,i)=>{
+    const [title,desc] = MEANINGS[mode][i];
+    const b = document.createElement("button");
+    b.type="button"; b.className="note"+(flipped[i]?" flip":"");
+    b.setAttribute("aria-label",`${l}: ${title}. ${desc}`);
+    b.innerHTML = `<div class="inner"><div class="face front"><span class="big">${l}</span><span class="hint">tócame</span></div><div class="face back"><strong>${l} · ${title}</strong><span>${desc}</span></div></div>`;
+    b.addEventListener("click",()=>b.classList.toggle("flip"));
+    notesEl.appendChild(b);
+  });
+}
+renderNotes();
+document.querySelectorAll(".mode button").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    mode = btn.dataset.mode;
+    document.querySelectorAll(".mode button").forEach(b=>b.setAttribute("aria-pressed", b===btn));
+    renderNotes();
+  });
+});
+document.getElementById("flipall").addEventListener("click",()=>{
+  const notes=[...notesEl.children];
+  const allFlipped = notes.every(n=>n.classList.contains("flip"));
+  notes.forEach(n=>n.classList.toggle("flip",!allFlipped));
+});
+
+/* Antes y después */
+const PAIRS = [
+  ["El sistema debe ser rápido.","El 95% de las búsquedas de rutas debe responder en menos de 2 segundos con 200 usuarios simultáneos, verificado con pruebas de carga antes del cierre del Sprint 3.",["S","M","A","T"]],
+  ["Mejorar la calidad del código.","Subir la cobertura de pruebas unitarias del módulo de pagos del 40% al 70% en las próximas 4 semanas; responsable: equipo backend.",["S","M","A","R","T"]],
+  ["La app debe ser fácil de usar.","Un usuario nuevo debe poder registrar una parada en menos de 3 minutos sin ayuda, comprobado con 5 usuarios en pruebas de usabilidad (requisito ligado a RF-07).",["S","M","R","T"]],
+  ["Terminar la base de datos.","Normalizar a 3FN las 12 tablas del esquema y cargar datos de prueba en MySQL antes del viernes 13 de noviembre.",["S","M","A","T"]]
+];
+const swapEl = document.getElementById("swap");
+PAIRS.forEach(([v,s,tags])=>{
+  const row=document.createElement("div"); row.className="pair hidden";
+  row.innerHTML=`<div class="vague">“${v}”</div><button type="button" class="btn">Revelar</button><div class="smart" aria-hidden="true">${s}<div class="tags">${tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div></div>`;
+  const btn=row.querySelector("button"), sm=row.querySelector(".smart");
+  btn.addEventListener("click",()=>{
+    const hidden=row.classList.toggle("hidden");
+    btn.textContent = hidden ? "Revelar" : "Ocultar";
+    sm.setAttribute("aria-hidden",hidden);
+  });
+  swapEl.appendChild(row);
+});
+
+/* Laboratorio */
+const goal=document.getElementById("goal"), chkA=document.getElementById("chkA"), chkR=document.getElementById("chkR");
+const meter=[...document.getElementById("meter").children], fb=document.getElementById("feedback"), verdict=document.getElementById("verdict");
+const VERBS=/\b(implementar|reducir|aumentar|subir|bajar|disminuir|desarrollar|migrar|crear|entregar|documentar|probar|integrar|registrar|validar|normalizar|diseñar|publicar|automatizar|corregir|cargar|responder|soportar|permitir|completar|lograr|construir|desplegar|configurar|cubrir|generar|mostrar|calcular|enviar|guardar)\w*/i;
+const VAGUE=/\b(mejorar|optimizar|rápid[oa]|bonit[oa]|fácil|amigable|eficiente|buen[oa]?|mejor|moderno|intuitiv[oa]|robust[oa]|todo|bien)\b/i;
+const NUM=/\d|%|\b(uno|dos|tres|cuatro|cinco|diez|cien|mil)\b/i;
+const TIME=/\b(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|lunes|martes|miércoles|jueves|viernes|sábado|domingo|semana|semanas|mes|meses|día|días|sprint|trimestre|semestre|fecha|release|versión|antes del?|para el|al final|al cierre)\b|\d{1,2}\/\d{1,2}/i;
+
+function analyze(){
+  const t=goal.value.trim();
+  const words=t.split(/\s+/).filter(Boolean).length;
+  const hasVerb=VERBS.test(t), vague=VAGUE.test(t), num=NUM.test(t), time=TIME.test(t);
+  const S = t && words>=7 && hasVerb && !(vague && !num);
+  const M = num;
+  const A = chkA.checked, R = chkR.checked;
+  const T = time;
+  const res=[S,M,A,R,T];
+  meter.forEach((m,i)=>m.classList.toggle("on",!!res[i] && !!t));
+  if(!t){fb.innerHTML="";verdict.textContent="Escribe algo para empezar ✏️";return}
+  const msgs=[
+    S?"✅ S: tiene una acción concreta.":(vague&&!num?"❌ S: usa palabras vagas como “mejorar” o “rápido” sin decir cuánto.":words<7?"❌ S: es muy corto, describe qué, dónde o para quién.":"❌ S: empieza con un verbo de acción (implementar, reducir, migrar…)."),
+    M?"✅ M: incluye un número o porcentaje.":"❌ M: agrega una cifra para saber cuándo está cumplido.",
+    A?"✅ A: dices que el equipo puede lograrlo.":"⬜ A: ¿es posible con tu tiempo y recursos? Márcalo si sí.",
+    R?"✅ R: está conectado con la meta del producto.":"⬜ R: ¿para qué sirve dentro del proyecto? Márcalo si sí.",
+    T?"✅ T: tiene un plazo.":"❌ T: ponle fecha, sprint o versión."
+  ];
+  fb.innerHTML=msgs.map(m=>`<li>${m}</li>`).join("");
+  const n=res.filter(Boolean).length;
+  verdict.textContent = n===5 ? "¡Objetivo 100% SMART! 🎉" : n>=3 ? `Vas bien: ${n}/5. Te falta poco.` : `${n}/5. Todavía es más deseo que objetivo.`;
+}
+[goal,chkA,chkR].forEach(el=>el.addEventListener("input",analyze));
+document.querySelectorAll("[data-ex]").forEach(b=>b.addEventListener("click",()=>{goal.value=b.dataset.ex;analyze()}));
+
+/* Quiz */
+const QUIZ=[
+  ["“Reducir los bugs.”",false,"No le dice a nadie cuántos bugs, de qué módulo ni para cuándo. Falla en S, M y T."],
+  ["“Reducir en 30% los bugs reportados en producción durante el próximo trimestre, medidos en el tablero de Jira.”",true,"Es específico, tiene una meta numérica, una forma de medirla y un plazo."],
+  ["“El servidor tendrá 101% de disponibilidad.”",false,"Tiene número, pero es imposible: falla en la A (alcanzable)."],
+  ["“El login debe permitir autenticación de dos factores por SMS en la versión 1.2, derivado del requisito de seguridad RS-04.”",true,"Es claro, verificable con una prueba, tiene versión de entrega y es trazable a su requisito padre."],
+  ["“Aprender todo React este fin de semana.”",false,"Tiene plazo, pero “todo React” no es específico ni medible, y en dos días no es alcanzable."],
+  ["“La interfaz debe verse moderna.”",false,"“Moderna” es subjetivo: no hay forma objetiva de probarlo."]
+];
+const qb=document.getElementById("quizbox");
+let qi=0, score=0;
+function showQ(){
+  if(qi>=QUIZ.length){
+    qb.innerHTML=`<p class="count">Resultado</p><p class="score">${score} / ${QUIZ.length}</p><p>${score===QUIZ.length?"Perfecto, ya piensas en SMART.":score>=4?"Muy bien, solo se te escaparon detalles.":"Repasa las notas de arriba y vuelve a intentarlo."}</p><button class="btn" id="again" type="button">Volver a jugar</button>`;
+    document.getElementById("again").onclick=()=>{qi=0;score=0;showQ()};
+    return;
+  }
+  const [q,ans,exp]=QUIZ[qi];
+  qb.innerHTML=`<p class="count">Pregunta ${qi+1} de ${QUIZ.length}</p><p class="q">${q}</p><div class="opts"><button class="btn" data-a="1" type="button">Sí es SMART</button><button class="btn ghost" data-a="0" type="button">No es SMART</button></div><div class="exp" id="exp" aria-live="polite"></div>`;
+  qb.querySelectorAll("[data-a]").forEach(b=>b.onclick=()=>{
+    const right=(b.dataset.a==="1")===ans;
+    if(right) score++;
+    qb.querySelectorAll("[data-a]").forEach(x=>x.disabled=true);
+    const e=document.getElementById("exp");
+    e.className="exp show "+(right?"good":"wrong");
+    e.innerHTML=`<strong>${right?"¡Correcto!":"Mmm, no."}</strong> ${exp}<div style="margin-top:12px"><button class="btn" type="button" id="next">${qi===QUIZ.length-1?"Ver resultado":"Siguiente"}</button></div>`;
+    document.getElementById("next").onclick=()=>{qi++;showQ()};
+    document.getElementById("next").focus();
+  });
+}
+showQ();
+</script>
+</body>
+</html>
